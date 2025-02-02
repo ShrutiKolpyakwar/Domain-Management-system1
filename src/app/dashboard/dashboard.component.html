@@ -1,0 +1,117 @@
+<!-- Main Dashboard with Table -->
+<div class="outer-container" *ngIf="!isEditPage">
+  <div class="sidebar">
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+    </div>
+    <div class="nav-links">
+      <span class="nav-item" routerLink="/dashboard">
+        <i class="pi pi-home"></i> Dashboard
+      </span>
+      <span class="nav-item" routerLink="/manage-users">
+        <i class="pi pi-users"></i> Manage Users
+      </span>
+      <span class="nav-item" (click)="logout()">
+        <i class="pi pi-sign-out"></i> Logout
+      </span>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="header-section">
+      <div class="header-left">
+        <h2 class="manage-domain-header">Manage <span>Domains</span></h2>
+      </div>
+      <div class="header-right">
+        <p-button label="Add Domain" icon="pi pi-plus" (click)="showDomainComponent()"></p-button>
+      </div>
+    </div>
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <span class="status-text all" (click)="filterDomains('all')">All</span>
+        <span class="status-text active" (click)="filterDomains('Active')">Active</span>
+        <span class="status-text inactive" (click)="filterDomains('Inactive')">Inactive</span>
+        <span class="status-text expired" (click)="filterDomains('Expired')">Expired</span>
+      </div>         
+
+    <p-table [value]="filteredDomains" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>#</th>
+          <th>Domain</th>
+          <th>Created On</th>
+          <th>Status</th>
+          <th>Server Location</th>
+          <th>Action</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-domain let-i="rowIndex">
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ domain.name }}</td>
+          <td>{{ domain.createdOn | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ domain.status }}</td>
+          <td>{{ domain.serverLocation }}</td>
+          <td>
+            <p-button label="Edit" icon="pi pi-pencil" (click)="editDomain(domain)" class="p-button-text action-button"></p-button>
+            <p-button label="Delete" icon="pi pi-trash" (click)="deleteDomain(domain)" class="p-button-danger p-button-text action-button"></p-button>
+          </td>          
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<!-- Edit Domain Page -->
+<div class="outer-container" *ngIf="isEditPage">
+  <div class="sidebar">
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+    </div>
+    <div class="nav-links">
+      <span class="nav-item" routerLink="/dashboard">
+        <i class="pi pi-home"></i> Dashboard
+      </span>
+      <span class="nav-item" routerLink="/manage-users">
+        <i class="pi pi-users"></i> Manage Users
+      </span>
+      <span class="nav-item" (click)="logout()">
+        <i class="pi pi-sign-out"></i> Logout
+      </span>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="header-section">
+      <h2>Edit Domain</h2>
+    </div>
+    <div class="edit-form-container">
+      <div class="edit-form">
+        <div class="form-group">
+          <label for="editName">Domain Name:</label>
+          <input id="editName" [(ngModel)]="editDomainData.name" />
+        </div>
+        <div class="form-group">
+          <label for="editCreatedOn">Created On:</label>
+          <input id="editCreatedOn" type="date" [(ngModel)]="editDomainData.createdOn" />
+        </div>
+        <div class="form-group">
+          <label for="editStatus">Status:</label>
+          <select id="editStatus" [(ngModel)]="editDomainData.status">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="Expired">Expired</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="editServerLocation">Server Location:</label>
+          <input id="editServerLocation" [(ngModel)]="editDomainData.serverLocation" />
+        </div>
+        <div class="form-buttons">
+          <p-button label="Cancel" (click)="cancelEdit()"></p-button>
+          <p-button label="Save Changes" icon="pi pi-save" (click)="updateDomain()"></p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

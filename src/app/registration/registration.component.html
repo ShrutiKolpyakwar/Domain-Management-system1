@@ -1,0 +1,43 @@
+<div class="registration-container">
+  <p-card header="Create Your Account" class="registration-card">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <h2>Register</h2>
+
+      <!-- First Name Field -->
+      <div class="p-field">
+        <label for="firstName">First Name</label>
+        <input id="firstName" pInputText formControlName="firstName" required />
+      </div>
+
+      <!-- Last Name Field -->
+      <div class="p-field">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" pInputText formControlName="lastName" required />
+      </div>
+
+      <!-- Username Field -->
+      <div class="p-field">
+        <label for="username">Username</label>
+        <input id="username" pInputText formControlName="username" required />
+      </div>
+
+      <!-- Description Field -->
+      <div class="p-field">
+        <label for="description">Description</label>
+        <textarea id="description" pInputTextarea formControlName="description" required></textarea>
+      </div>
+
+      <!-- Password Field -->
+      <div class="p-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" pInputText formControlName="password" required />
+      </div>
+
+      <!-- Button Container (Register & Login buttons) -->
+      <div class="button-container">
+        <p-button label="Register" type="submit" class="register-btn"></p-button>
+        <p-button label="Go to Login" icon="pi pi-sign-in" (click)="goToLogin()" class="login-btn"></p-button>
+      </div>
+    </form>
+  </p-card>
+</div>

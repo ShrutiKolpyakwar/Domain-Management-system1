@@ -1,0 +1,150 @@
+/* General container styling */
+body {
+  background-color: #add8e6; /* Light blue background */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex; /* Center the form container */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: Arial, sans-serif; /* Set a clean font */
+}
+
+.user-management {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 50%; /* Smaller box width */
+  margin: 20px auto; /* Centered box */
+  background-color: #ffffff; /* White box background */
+}
+
+/* Heading styles */
+.user-management h2 {
+  text-align: center;
+  color: #333;
+  font-size: 18px; /* Smaller heading */
+  margin-bottom: 10px;
+}
+
+.user-management h3 {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* PrimeNG button styling */
+.go-to-dashboard-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px; /* Smaller button font size */
+}
+
+/* Add User Form */
+.add-user-form {
+  padding: 15px;
+  background-color: #f9f9f9; /* Light gray background for the form */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-user-form .form-group {
+  margin-bottom: 10px;
+}
+
+.add-user-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.add-user-form input {
+  width: 100%;
+  padding: 12px; /* Smaller padding for input */
+  font-size: 12px; /* Smaller font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.add-user-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100%; /* Full-width button for form */
+  transition: background-color 0.3s;
+}
+
+.add-user-btn:hover {
+  background-color: #0056b3;
+}
+
+/* User List Table */
+.user-list {
+  margin-top: 20px;
+}
+
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 13px; /* Smaller font size for table */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-list table th,
+.user-list table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.user-list table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.user-list table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-list table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Action buttons */
+.user-list button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 8px; /* Smaller padding for buttons */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px; /* Smaller font size */
+  transition: background-color 0.3s;
+}
+
+.user-list button:hover {
+  background-color: #0056b3;
+}
+
+.user-list button:nth-child(2) {
+  background-color: #dc3545;
+}
+
+.user-list button:nth-child(2):hover {
+  background-color: #a71d2a;
+}

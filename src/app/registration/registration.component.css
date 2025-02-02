@@ -1,0 +1,97 @@
+/* Ensure the entire page is used for the background */
+html, body {
+  height: 100%;               /* Ensure full height of the screen */
+  margin: 0;                  /* Remove default margin */
+  padding: 0;                 /* Remove default padding */
+  background-size: cover;    /* Ensure the image covers the whole screen */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Don't repeat the image */
+}
+
+/* Container for the registration form */
+.registration-container {
+  display: flex;                /* Use Flexbox for centering */
+  justify-content: center;      /* Center horizontally */
+  align-items: center;          /* Center vertically */
+  height: 100%;                 /* Full screen height */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);  /* Semi-transparent background for readability */
+  background-image: url('/assets/register.png');
+}
+
+/* Styling for the registration form card */
+.registration-card {
+  background-color: skyblue;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;             /* Set max width */
+}
+
+/* Heading Style */
+.registration-card h2 {
+  color: #4a90e2;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Input fields styling */
+.p-field {
+  margin-bottom: 20px;
+}
+
+.p-field label {
+  font-weight: bold;
+  color: #333;
+}
+
+.p-field input,
+.p-field textarea {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.p-field input:focus,
+.p-field textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Button container to align buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.register-btn {
+  background-color: #4a90e2;
+  border-color: #4a90e2;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.register-btn:hover {
+  background-color: #357abd;
+}
+
+.login-btn {
+  background-color: #f4f4f4;
+  border-color: #ccc;
+  color: #4a90e2;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.login-btn:hover {
+  background-color: white;
+}
+
+/* Add some spacing to the buttons */
+.register-btn, .login-btn {
+  margin-top: 10px;
+}

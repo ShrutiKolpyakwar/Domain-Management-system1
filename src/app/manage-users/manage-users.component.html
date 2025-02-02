@@ -1,0 +1,57 @@
+<div class="user-management">
+  <h2>Manage Users</h2>
+  <!-- PrimeNG Button for "Go to Dashboard" -->
+  <p-button label="Go to Dashboard" icon="pi pi-home" routerLink="/dashboard" class="go-to-dashboard-btn"></p-button>
+  
+  <!-- Add User Form -->
+  <div class="add-user-form">
+      <h3>Add New User</h3>
+      <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" [(ngModel)]="newUser.firstName" placeholder="Enter first name" />
+      </div>
+      <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" [(ngModel)]="newUser.lastName" placeholder="Enter last name" />
+      </div>
+      <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" [(ngModel)]="newUser.username" placeholder="Enter username" />
+      </div>
+      <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" id="description" [(ngModel)]="newUser.description" placeholder="Enter description" />
+      </div>
+      <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" [(ngModel)]="newUser.password" placeholder="Enter password" />
+      </div>
+      <button class="add-user-btn" (click)="addUser()">Add User</button>
+  </div>
+
+  <!-- Users Table -->
+  <div *ngIf="users.length > 0" class="user-list">
+      <h3>User List</h3>
+      <table>
+          <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Description</th>
+              <th>Actions</th>
+          </tr>
+          <tr *ngFor="let user of users">
+              <td>{{ user.firstName }}</td>
+              <td>{{ user.lastName }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.password }}</td>
+              <td>{{ user.description }}</td>
+              <td>
+                  <button *ngIf="!user.isDeleted" (click)="editUser(user)">Edit</button>
+                  <button *ngIf="!user.isDeleted" (click)="deleteUser(user)">Delete</button>
+              </td>
+          </tr>
+      </table>
+  </div>
+</div>

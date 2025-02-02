@@ -1,0 +1,84 @@
+/* Full-screen light blue background */
+body {
+  background-color: #add8e6; /* Light blue background */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex; /* Center the form container */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: Arial, sans-serif; /* Set a clean font */
+}
+
+/* Style for the domain form container */
+.form-container {
+  background-color: #ffffff; /* White background for contrast */
+  padding: 30px;
+  border-radius: 15px; /* Rounded corners for a modern look */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+  width: 400px; /* Adjusted width for better layout */
+  max-width: 90%; /* Responsive on smaller screens */
+  text-align: center; /* Center-align text inside */
+}
+
+/* Form heading style */
+.form-container h1 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+/* Form field styles */
+.form-field {
+  margin-bottom: 15px;
+  text-align: left; /* Align labels and inputs to the left */
+}
+
+.form-field label {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 5px;
+  display: block; /* Ensure labels appear above inputs */
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-sizing: border-box; /* Prevent overflow issues */
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: #007bff; /* Highlight border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle glow */
+}
+
+/* Error message style */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Submit button style */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007bff; /* Blue button */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

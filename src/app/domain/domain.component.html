@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Domain</title>
+  <link rel="stylesheet" href="domain.component.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Add Domain</h1>
+    <form (ngSubmit)="onSubmit()" #domainForm="ngForm">
+      <div class="form-field">
+        <label for="domainName">Domain Name:</label>
+        <input id="domainName" name="domainName" [(ngModel)]="domain.name" required />
+        <div *ngIf="domainForm.submitted && !domain.name" class="error">Please fill out this field.</div>
+      </div>
+      <div class="form-field">
+        <label for="createdOn">Created On:</label>
+        <input id="createdOn" name="createdOn" type="date" [(ngModel)]="domain.createdOn" required />
+        <div *ngIf="domainForm.submitted && !domain.createdOn" class="error">Please fill out this field.</div>
+      </div>
+      <div class="form-field">
+        <label for="status">Status:</label>
+        <select id="status" name="status" [(ngModel)]="domain.status" required>
+          <option *ngFor="let option of statusOptions" [value]="option.value">{{ option.label }}</option>
+        </select>
+        <div *ngIf="domainForm.submitted && !domain.status" class="error">Please select a status.</div>
+      </div>
+      <div class="form-field">
+        <label for="serverLocation">Server Location:</label>
+        <input id="serverLocation" name="serverLocation" [(ngModel)]="domain.serverLocation" required />
+        <div *ngIf="domainForm.submitted && !domain.serverLocation" class="error">Please fill out this field.</div>
+      </div>
+      <button type="submit">Add Domain</button>
+    </form>
+  </div>
+</body>
+</html>
